@@ -1,0 +1,14 @@
+<h1>Students#index</h1>
+
+<%= collection_select(:student, :tutor_id, Tutor.all, :id, :name, prompt: true) %>
+
+<% @students.each do |n| %>
+  <li>
+  <%= n.fname %>
+
+  <%= n.sname %>
+
+  <%= n.tutor.name %>
+
+  </li>
+<% end %>
