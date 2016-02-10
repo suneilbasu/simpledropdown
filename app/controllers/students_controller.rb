@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   def index
-  	@students = Student.all
+  	@students = Student.where(["fname LIKE ?","%#{params[:search]}"])
   end
 
   def new

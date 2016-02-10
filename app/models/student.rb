@@ -1,5 +1,11 @@
 class Student < ActiveRecord::Base
 	belongs_to :tutor
-
-	scope :starts_with, -> (fname) {where("name like ?", "#{fname}%")}
+	def self.search(search)
+		if search
+			where("fname LIKE ?","%#{:search} %", "%#{search}%")
+		else
+			all
+		end 
+	end
 end
+ 
