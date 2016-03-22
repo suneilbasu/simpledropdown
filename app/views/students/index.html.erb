@@ -2,10 +2,12 @@
 
 <%= form_tag students_path, :method => 'get' do %>
 	<%= text_field_tag :search, params[:search] %>
+	<%= collection_select(:student, :tutor_id, Tutor.all, :id, :name, prompt: true) %>
 	<%=submit_tag "Search" %>
 <% end %>
+<%= link_to "search" , new_search_path %>2
 
-<% @students.each do |n| %>
+<% @students.each do |n| %>we
   <li>
   <%= n.fname %>
 

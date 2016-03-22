@@ -1,0 +1,17 @@
+<h1>Searches#new</h1>
+
+<%= form_for @search, html: {class: "pure-form"} do |s| %>
+
+
+  <div class="field">
+    <%= s.label :fname, "first name" %> - <%= s.text_field :fname, size: 10 %></p>
+  </div>
+  <div class="field">
+    <%= s.label :tutor_id %><br />
+    <%= s.select :tutor_id, options_for_select(@tutor_id), :include_blank => true %>
+  </div>
+
+  <div class="actions"><%= s.submit "Search", class: "pure-button pure-button-primary" %></div>
+<% end %>
+
+<p><%= link_to 'Back', students_path %></p>
